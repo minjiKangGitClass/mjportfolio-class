@@ -6,7 +6,7 @@ This project is a personal portfolio website.
 ## Features
 - Introduce my career
 - Display portfolio cards
-- Receive feedback by email
+- Validate name, email, and message in the contact form (no email is sent)
 
 ## Technologies
 - HTML
