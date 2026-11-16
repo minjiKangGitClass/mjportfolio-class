@@ -115,8 +115,26 @@
       </div>
       <div class="contact-action">
         <a class="email-link" href="mailto:hywkmj@gmail.com">hywkmj@gmail.com <span>↗</span></a>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="contact-form__fields">
+            <label class="contact-form__field">
+              <span>Name</span>
+              <input name="name" type="text" autocomplete="name" maxlength="80" placeholder="Name" required />
+            </label>
+            <label class="contact-form__field">
+              <span>Email</span>
+              <input name="email" type="email" autocomplete="email" maxlength="254" placeholder="Email" required />
+            </label>
+            <label class="contact-form__field contact-form__field--message">
+              <span>Message</span>
+              <textarea name="message" rows="4" maxlength="2000" placeholder="Message" required></textarea>
+            </label>
+          </div>
+          <button class="contact-form__submit" type="submit">Submit</button>
+          <p id="contact-form-status" class="contact-form__status" role="status" aria-live="polite"></p>
+        </form>
         <div class="social-links">
-          <a href="https://rememberapp.co.kr" target="_blank" rel="noreferrer">Remember<a>
+          <a href="https://rememberapp.co.kr" target="_blank" rel="noreferrer">Remember</a>
           <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
         </div>
       </div>

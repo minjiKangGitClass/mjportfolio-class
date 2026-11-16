@@ -124,3 +124,43 @@ projectModal.addEventListener("click", (event) => {
   }
 });
 projectModal.addEventListener("keydown", handleProjectModalKeydown);
+
+const contactForm = document.querySelector("#contact-form");
+const contactFormStatus = document.querySelector("#contact-form-status");
+const contactName = contactForm.querySelector('[name="name"]');
+const contactEmail = contactForm.querySelector('[name="email"]');
+const contactMessage = contactForm.querySelector('[name="message"]');
+
+contactForm.addEventListener("input", (event) => {
+  event.target.setCustomValidity("");
+  contactFormStatus.textContent = "";
+});
+
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  [contactName, contactEmail, contactMessage].forEach((field) => {
+    field.setCustomValidity("");
+    field.value = field.value.trim();
+  });
+
+  if (!contactName.value) {
+    contactName.setCustomValidity("이름을 입력해 주세요.");
+  }
+  if (!contactEmail.value) {
+    contactEmail.setCustomValidity("이메일을 입력해 주세요.");
+  } else if (!contactEmail.validity.valid) {
+    contactEmail.setCustomValidity("올바른 이메일 주소를 입력해 주세요.");
+  }
+  if (!contactMessage.value) {
+    contactMessage.setCustomValidity("메시지를 입력해 주세요.");
+  }
+
+  if (!contactForm.checkValidity()) {
+    contactForm.reportValidity();
+    contactFormStatus.textContent = "입력값을 확인해 주세요.";
+    return;
+  }
+
+  contactFormStatus.textContent = "입력값이 올바릅니다. 실제 이메일은 전송되지 않습니다.";
+});

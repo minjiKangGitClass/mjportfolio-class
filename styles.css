@@ -469,6 +469,10 @@ html {
   z-index: 1;
 }
 
+.contact-copy {
+  transform: translateY(-18px);
+}
+
 .email-link {
   font-family: "DM Sans", "Noto Sans KR", sans-serif;
   font-size: clamp(18px, 2.3vw, 27px);
@@ -505,6 +509,10 @@ html {
 
   .contact {
     margin-bottom: 42px;
+  }
+
+  .contact-copy {
+    transform: none;
   }
 
   .contact::after {
@@ -614,6 +622,85 @@ html {
   color: var(--lime);
   margin-bottom: 12px;
   padding-right: 48px;
+}
+
+.contact-action {
+  flex: 0 1 420px;
+  width: min(100%, 420px);
+}
+
+.contact-form {
+  margin-top: 32px;
+}
+
+.contact-form__fields {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-form__field {
+  color: #fff;
+  display: grid;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.contact-form__field--message {
+  grid-column: 1 / -1;
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  background: #111c20;
+  border: 1px solid #42606a;
+  border-radius: 2px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  padding: 11px 12px;
+  width: 100%;
+}
+
+.contact-form__field input::placeholder,
+.contact-form__field textarea::placeholder {
+  color: #fff;
+  opacity: .7;
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  border-color: var(--lime);
+  outline: 1px solid var(--lime);
+}
+
+.contact-form__submit {
+  background: var(--lime);
+  border: 0;
+  border-radius: 2px;
+  color: #0b1115;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 16px;
+  padding: 12px 18px;
+}
+
+.contact-form__submit:hover {
+  background: #e5ff86;
+}
+
+.contact-form__status {
+  color: var(--lime);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+  min-height: 1.6em;
 }
 
 .project-modal__notice {
