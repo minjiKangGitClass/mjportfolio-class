@@ -7,6 +7,7 @@ This project is a personal portfolio website.
 - Introduce my career
 - Display portfolio cards
 - Validate name, email, and message in the contact form (no email is sent)
+- Toggle between light and dark themes; the selected theme is saved in local storage
 
 ## Technologies
 - HTML

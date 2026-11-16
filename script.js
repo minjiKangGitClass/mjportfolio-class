@@ -1,7 +1,25 @@
 const currentYear = document.querySelector("#current-year");
 const revealItems = document.querySelectorAll(".reveal");
+const themeToggle = document.querySelector(".theme-toggle");
+const savedTheme = localStorage.getItem("portfolio-theme");
 
 currentYear.textContent = new Date().getFullYear();
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.dataset.theme = theme;
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggle.setAttribute("aria-label", isDark ? "라이트 모드로 전환" : "다크 모드로 전환");
+  themeToggle.title = isDark ? "라이트 모드로 전환" : "다크 모드로 전환";
+  themeToggle.querySelector("span").textContent = isDark ? "☀" : "☾";
+}
+
+setTheme(savedTheme === "dark" ? "dark" : "light");
+themeToggle.addEventListener("click", () => {
+  const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
+  setTheme(nextTheme);
+  localStorage.setItem("portfolio-theme", nextTheme);
+});
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
